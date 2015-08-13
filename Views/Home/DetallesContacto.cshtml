@@ -1,0 +1,60 @@
+﻿@model Agenda_Personal.Models.Contacto
+
+@{
+    ViewBag.Title = "Detalles de Contacto";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DetallesContacto</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Contacto</legend>
+
+        <table>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Contacto_Id)</th>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(model => model.Contacto_Id)</td>
+            </tr>
+
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Contacto_Nombres)</th>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(model => model.Contacto_Nombres)</td>
+            </tr>
+
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Contacto_Apellidos)</th>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(model => model.Contacto_Apellidos)</td>
+            </tr>
+
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Contacto_Telefono)</th>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(model => model.Contacto_Telefono)</td>
+            </tr>
+
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Contacto_Email)</th>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(model => model.Contacto_Email)</td>
+            </tr>
+        </table>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Editar", "ModificarContacto", new { Contacto_Id = Model.Contacto_Id }) |
+        @Html.ActionLink("Regresar", "Index")
+    </p>
+</body>
+</html>

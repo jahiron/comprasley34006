@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Agenda_Personal.Models.Contacto>
+
+@{
+    ViewBag.Title = "Listado de Contactos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.Label("NombreApellido", "Criterio:  ")
+    @Html.TextBox("NombreApellido", "")
+        <input type="submit" name="buscar" value="Buscar" />
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Contacto_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contacto_Nombres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contacto_Apellidos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contacto_Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contacto_Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contacto_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contacto_Nombres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contacto_Apellidos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contacto_Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contacto_Email)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "ModificarContacto", new { Contacto_Id = item.Contacto_Id }) |
+                @Html.ActionLink("Detalles", "DetallesContacto", new { Contacto_Id = item.Contacto_Id }) |
+                <a href='@Url.Action("BorrarContacto", new { Contacto_Id = item.Contacto_Id })'>Borrar</a>
+            
+                @*@Html.ActionLink("Borrar", "Delete", new { Contacto_Id = item.Contacto_Id })*@
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

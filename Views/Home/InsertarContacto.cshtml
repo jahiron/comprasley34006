@@ -1,0 +1,61 @@
+﻿@model Agenda_Personal.Models.Contacto
+
+@{
+    ViewBag.Title = "Insertar Contacto";
+}
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Datos del contacto</legend>
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.Contacto_Id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Contacto_Id)
+            @Html.ValidationMessageFor(model => model.Contacto_Id)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Contacto_Nombres)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Contacto_Nombres)
+            @Html.ValidationMessageFor(model => model.Contacto_Nombres)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Contacto_Apellidos)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Contacto_Apellidos)
+            @Html.ValidationMessageFor(model => model.Contacto_Apellidos)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Contacto_Telefono)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Contacto_Telefono)
+            @Html.ValidationMessageFor(model => model.Contacto_Telefono)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Contacto_Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Contacto_Email)
+            @Html.ValidationMessageFor(model => model.Contacto_Email)
+        </div>
+
+        <p>
+            <input type="submit" value="Guardar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Regresar", "Index")
+</div>
